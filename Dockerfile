@@ -10,9 +10,7 @@ RUN apk update \
 COPY --chown=nginx:nginx ./dist/${APP_NAME}/browser /usr/share/nginx/html
 COPY --chown=nginx:nginx ./nginx/docker-nginx-default.conf /etc/nginx/templates/default.conf.template
 COPY --chown=nginx:nginx ./nginx/nginx.conf /etc/nginx/nginx.conf
-
 COPY --chown=nginx:nginx ./nginx/50x.html /usr/share/nginx/html/50x.html
-COPY --chown=nginx:nginx ./nginx/40x.html /usr/share/nginx/html/40x.html
 COPY --chown=nginx:nginx ./nginx/404.html /usr/share/nginx/html/404.html
 
 RUN chown -R nginx:nginx /var/cache/nginx && \
@@ -28,6 +26,6 @@ ENV LOG_FORMAT=main_json
 
 USER nginx
 
-CMD ["nginx", "-g", "daemon off;"]
-
 EXPOSE 8080
+
+CMD ["nginx", "-g", "daemon off;"]
