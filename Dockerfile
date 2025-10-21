@@ -24,6 +24,8 @@ RUN chown -R nginx:nginx /var/cache/nginx && \
   chown -R nginx:nginx /app/cache && \
   chown -R nginx:nginx /var/run/nginx.pid
 
+ENV LOG_FORMAT=main_json
+
 USER nginx
 
 CMD ["nginx", "-g", "daemon off;"]
