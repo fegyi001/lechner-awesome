@@ -1,0 +1,15 @@
+.angular
+.husky
+.cache
+.vscode
+.git
+.idea
+.gitignore
+.scannerwork
+.eslintcache
+.yarn
+node_modules
+null
+Dockerfile
+src
+public
